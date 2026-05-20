@@ -1,0 +1,101 @@
+/* 画面全体のベースデザイン（少しミステリアスなダークモード） */
+body {
+    background: linear-gradient(135deg, #1e1e2f, #0f0f1a);
+    color: #ffffff;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* 中央のコンテンツを囲む四角い箱 */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 400px;
+    width: 90%;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-top: 0;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.sub-text {
+    color: #b3b3cc;
+    font-size: 0.9rem;
+    margin-bottom: 40px;
+}
+
+/* 運命の決断ボタン */
+#decision-btn {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#decision-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(37, 117, 252, 0.6);
+}
+
+#decision-btn:active {
+    transform: scale(0.98);
+}
+
+/* 結果を表示するエリア */
+#result-display {
+    margin-top: 40px;
+    min-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#answer-text {
+    font-size: 2.2rem;
+    font-weight: bold;
+    margin: 0;
+    color: #00ffcc;
+    text-shadow: 0 0 15px rgba(0, 255, 204, 0.6);
+}
+
+/* ★ここがポイント：画面をフラッシュさせるための透明な「膜」 */
+#flash-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #ffffff;
+    opacity: 0; /* 普段は透明で見えない */
+    pointer-events: none; /* 下のボタンをクリックできるようにする */
+    z-index: 9999;
+}
+
+/* JavaScriptでこのクラスが合体した瞬間、1回だけピカッと光るアニメーション */
+.flash-animation {
+    animation: flashEffect 0.4s ease-out;
+}
+
+@keyframes flashEffect {
+    0% { opacity: 1; }       /* 押した瞬間は真っ白 */
+    100% { opacity: 0; }     /* 0.4秒かけてスーッと透明に戻る */
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>神の決断ボタン</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- アニメーション用のフラッシュ光（普段は隠れています） -->
+    <div id="flash-overlay"></div>
+
+    <div class="container">
+        <h1>神の決断ボタン</h1>
+        <p class="sub-text">迷っていることを頭に思い浮かべて、ボタンを押せ…</p>
+
+        <!-- 決断を下すボタン -->
+        <button id="decision-btn" onclick="askGod()">決断を仰ぐ</button>
+
+        <!-- 結果が表示される場所 -->
+        <div id="result-display">
+            <p id="answer-text">？？？</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
